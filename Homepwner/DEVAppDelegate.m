@@ -7,6 +7,7 @@
 //
 
 #import "DEVAppDelegate.h"
+#import "DEVItemsViewController.h"
 
 @implementation DEVAppDelegate
 
@@ -14,6 +15,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    DEVItemsViewController *itemsViewController = [[DEVItemsViewController alloc] init];
+    
+    self.window.rootViewController = itemsViewController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

@@ -19,6 +19,9 @@
 		E075690C1946117200FF5B45 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E07568F41946117200FF5B45 /* UIKit.framework */; };
 		E07569141946117200FF5B45 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E07569121946117200FF5B45 /* InfoPlist.strings */; };
 		E07569161946117200FF5B45 /* HomepwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E07569151946117200FF5B45 /* HomepwnerTests.m */; };
+		E07569211946147800FF5B45 /* DEVItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07569201946147800FF5B45 /* DEVItemsViewController.m */; };
+		E0756924194615FE00FF5B45 /* DEVItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E0756923194615FE00FF5B45 /* DEVItem.m */; };
+		E07569291946177200FF5B45 /* DEVItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E07569281946177200FF5B45 /* DEVItemStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,12 @@
 		E07569111946117200FF5B45 /* HomepwnerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HomepwnerTests-Info.plist"; sourceTree = "<group>"; };
 		E07569131946117200FF5B45 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E07569151946117200FF5B45 /* HomepwnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerTests.m; sourceTree = "<group>"; };
+		E075691F1946147800FF5B45 /* DEVItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEVItemsViewController.h; sourceTree = "<group>"; };
+		E07569201946147800FF5B45 /* DEVItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEVItemsViewController.m; sourceTree = "<group>"; };
+		E0756922194615FE00FF5B45 /* DEVItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEVItem.h; sourceTree = "<group>"; };
+		E0756923194615FE00FF5B45 /* DEVItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEVItem.m; sourceTree = "<group>"; };
+		E07569271946177200FF5B45 /* DEVItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEVItemStore.h; sourceTree = "<group>"; };
+		E07569281946177200FF5B45 /* DEVItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEVItemStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,8 @@
 		E07568E41946117200FF5B45 = {
 			isa = PBXGroup;
 			children = (
+				E07569251946160200FF5B45 /* Models */,
+				E07569261946160D00FF5B45 /* Views */,
 				E07568F61946117200FF5B45 /* Homepwner */,
 				E075690F1946117200FF5B45 /* HomepwnerTests */,
 				E07568EF1946117200FF5B45 /* Frameworks */,
@@ -142,6 +153,26 @@
 				E07569121946117200FF5B45 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E07569251946160200FF5B45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0756922194615FE00FF5B45 /* DEVItem.h */,
+				E07569271946177200FF5B45 /* DEVItemStore.h */,
+				E07569281946177200FF5B45 /* DEVItemStore.m */,
+				E0756923194615FE00FF5B45 /* DEVItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E07569261946160D00FF5B45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E075691F1946147800FF5B45 /* DEVItemsViewController.h */,
+				E07569201946147800FF5B45 /* DEVItemsViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +273,9 @@
 			files = (
 				E07569011946117200FF5B45 /* DEVAppDelegate.m in Sources */,
 				E07568FD1946117200FF5B45 /* main.m in Sources */,
+				E0756924194615FE00FF5B45 /* DEVItem.m in Sources */,
+				E07569291946177200FF5B45 /* DEVItemStore.m in Sources */,
+				E07569211946147800FF5B45 /* DEVItemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
