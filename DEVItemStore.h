@@ -12,9 +12,13 @@
 
 @interface DEVItemStore : NSObject
 
++ (instancetype)sharedStore;
+
 @property (nonatomic, readonly, copy) NSArray *allItems;
 
-+ (instancetype)sharedStore;
 - (DEVItem *)createItem;
+- (void)removeItem:(DEVItem *)item;
+- (void)moveItemAtIndex:(NSUInteger)fromIndex
+                toIndex:(NSUInteger)toIndex;
 
 @end

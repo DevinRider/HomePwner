@@ -59,7 +59,28 @@
     [self.privateItems addObject:item];
     
     return item;
+}
+
+- (void)removeItem:(DEVItem *)item
+{
+    [self.privateItems removeObjectIdenticalTo:item];
+}
+
+- (void)moveItemAtIndex:(NSUInteger)fromIndex
+                toIndex:(NSUInteger)toIndex
+{
+    if(fromIndex == toIndex){
+        return;
+    }
+    //get the pointer to object being moved so you can reinsert it
+    DEVItem *item = self.privateItems[fromIndex];
     
+    //remove item from array
+    [self.privateItems removeObjectAtIndex:fromIndex];
+    
+    //insert the item in array at new location
+    [self.privateItems insertObject:item
+                            atIndex:toIndex];
 }
 
 @end
