@@ -9,10 +9,9 @@
 #import "DEVItemsViewController.h"
 #import "DEVItemStore.h"
 #import "DEVItem.h"
+#import "DEVDetailViewController.h"
 
 @interface DEVItemsViewController ()
-
-@property (nonatomic, strong) IBOutlet UIView *headerView;
 
 @end
 
@@ -24,7 +23,18 @@
     self = [super initWithStyle:UITableViewStylePlain];
     
     if(self){
-
+      //  UINavigationItem *navItem = self.navigationItem;
+        self.navigationItem.title = @"Homepwner";
+        
+        //create a new bar button item that will send
+        //addNewItem: to DEVItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                             target:self
+                                                                             action:@selector(addNewItem:)];
+        
+        //set this bar item as the right item in the navigationItem
+        self.navigationItem.rightBarButtonItem = bbi;
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
     }
     
     return self;
@@ -47,8 +57,6 @@
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -92,18 +100,26 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
                                         toIndex:destinationIndexPath.row];
 }
 
-- (UIView *)headerView
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //if you have not loaded the headerview yet...
-    if(!_headerView)
-    {
-        //load HeaderView.xib
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                      owner:self
-                                    options:nil];
-    }
+    DEVDetailViewController *detailViewController = [[DEVDetailViewController alloc] init];
+ 
+    NSArray *items = [[DEVItemStore sharedStore] allItems];
+    DEVItem *selectedItem = items[indexPath.row];
     
-    return _headerView;
+    detailViewController.item = selectedItem;
+    
+    //push it onto the top of the navigation controller's stack
+    [self.navigationController pushViewController:detailViewController
+                                         animated:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 - (IBAction)addNewItem:(id)sender
@@ -118,20 +134,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
     //insert this new row into the table
     [self.tableView insertRowsAtIndexPaths:@[indexPath]
                           withRowAnimation:UITableViewRowAnimationTop];
-}
-
-- (IBAction)toggleEditingMode:(id)sender
-{
-    if(!self.editing){
-        [sender setTitle:@"Done"
-                forState:UIControlStateNormal];
-        self.editing = true;
-    }
-    else{
-        [sender setTitle:@"Edit"
-                forState:UIControlStateNormal];
-        self.editing = false;
-    }
 }
 
 @end

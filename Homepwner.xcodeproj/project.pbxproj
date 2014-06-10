@@ -22,7 +22,8 @@
 		E07569211946147800FF5B45 /* DEVItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07569201946147800FF5B45 /* DEVItemsViewController.m */; };
 		E0756924194615FE00FF5B45 /* DEVItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E0756923194615FE00FF5B45 /* DEVItem.m */; };
 		E07569291946177200FF5B45 /* DEVItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E07569281946177200FF5B45 /* DEVItemStore.m */; };
-		E075692B1947553F00FF5B45 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E075692A1947553F00FF5B45 /* HeaderView.xib */; };
+		E075692F1947B5E800FF5B45 /* DEVDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E075692D1947B5E800FF5B45 /* DEVDetailViewController.m */; };
+		E07569301947B5E800FF5B45 /* DEVDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E075692E1947B5E800FF5B45 /* DEVDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +59,9 @@
 		E0756923194615FE00FF5B45 /* DEVItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEVItem.m; sourceTree = "<group>"; };
 		E07569271946177200FF5B45 /* DEVItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEVItemStore.h; sourceTree = "<group>"; };
 		E07569281946177200FF5B45 /* DEVItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEVItemStore.m; sourceTree = "<group>"; };
-		E075692A1947553F00FF5B45 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		E075692C1947B5E800FF5B45 /* DEVDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEVDetailViewController.h; sourceTree = "<group>"; };
+		E075692D1947B5E800FF5B45 /* DEVDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEVDetailViewController.m; sourceTree = "<group>"; };
+		E075692E1947B5E800FF5B45 /* DEVDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DEVDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,9 @@
 			children = (
 				E07568FF1946117200FF5B45 /* DEVAppDelegate.h */,
 				E07569001946117200FF5B45 /* DEVAppDelegate.m */,
+				E075692C1947B5E800FF5B45 /* DEVDetailViewController.h */,
+				E075692D1947B5E800FF5B45 /* DEVDetailViewController.m */,
+				E075692E1947B5E800FF5B45 /* DEVDetailViewController.xib */,
 				E07569021946117200FF5B45 /* Images.xcassets */,
 				E07568F71946117200FF5B45 /* Supporting Files */,
 			);
@@ -173,7 +179,6 @@
 			children = (
 				E075691F1946147800FF5B45 /* DEVItemsViewController.h */,
 				E07569201946147800FF5B45 /* DEVItemsViewController.m */,
-				E075692A1947553F00FF5B45 /* HeaderView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -254,7 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E075692B1947553F00FF5B45 /* HeaderView.xib in Resources */,
+				E07569301947B5E800FF5B45 /* DEVDetailViewController.xib in Resources */,
 				E07568FB1946117200FF5B45 /* InfoPlist.strings in Resources */,
 				E07569031946117200FF5B45 /* Images.xcassets in Resources */,
 			);
@@ -278,6 +283,7 @@
 				E07569011946117200FF5B45 /* DEVAppDelegate.m in Sources */,
 				E07568FD1946117200FF5B45 /* main.m in Sources */,
 				E0756924194615FE00FF5B45 /* DEVItem.m in Sources */,
+				E075692F1947B5E800FF5B45 /* DEVDetailViewController.m in Sources */,
 				E07569291946177200FF5B45 /* DEVItemStore.m in Sources */,
 				E07569211946147800FF5B45 /* DEVItemsViewController.m in Sources */,
 			);
