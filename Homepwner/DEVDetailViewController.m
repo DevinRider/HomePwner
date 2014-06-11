@@ -10,7 +10,7 @@
 #import "DEVItem.h"
 #import "DEVImageStore.h"
 
-@interface DEVDetailViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface DEVDetailViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialField;
@@ -84,6 +84,16 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     item.itemName = self.nameField.text;
     item.serialNumber = self.serialField.text;
     item.valueInDollars = [self.valueField.text intValue];
+}
+- (IBAction)backgroundTapped:(id)sender
+{
+    [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)setItem:(DEVItem *)item
