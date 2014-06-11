@@ -24,6 +24,7 @@
 		E07569291946177200FF5B45 /* DEVItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E07569281946177200FF5B45 /* DEVItemStore.m */; };
 		E075692F1947B5E800FF5B45 /* DEVDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E075692D1947B5E800FF5B45 /* DEVDetailViewController.m */; };
 		E07569301947B5E800FF5B45 /* DEVDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E075692E1947B5E800FF5B45 /* DEVDetailViewController.xib */; };
+		E0DD2C701948B07B00FAD8FC /* DEVImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DD2C6F1948B07B00FAD8FC /* DEVImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		E075692C1947B5E800FF5B45 /* DEVDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEVDetailViewController.h; sourceTree = "<group>"; };
 		E075692D1947B5E800FF5B45 /* DEVDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEVDetailViewController.m; sourceTree = "<group>"; };
 		E075692E1947B5E800FF5B45 /* DEVDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DEVDetailViewController.xib; sourceTree = "<group>"; };
+		E0DD2C6E1948B07B00FAD8FC /* DEVImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DEVImageStore.h; path = Homepwner/DEVImageStore.h; sourceTree = "<group>"; };
+		E0DD2C6F1948B07B00FAD8FC /* DEVImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DEVImageStore.m; path = Homepwner/DEVImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,9 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				E0756922194615FE00FF5B45 /* DEVItem.h */,
+				E0756923194615FE00FF5B45 /* DEVItem.m */,
 				E07569271946177200FF5B45 /* DEVItemStore.h */,
 				E07569281946177200FF5B45 /* DEVItemStore.m */,
-				E0756923194615FE00FF5B45 /* DEVItem.m */,
+				E0DD2C6E1948B07B00FAD8FC /* DEVImageStore.h */,
+				E0DD2C6F1948B07B00FAD8FC /* DEVImageStore.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0DD2C701948B07B00FAD8FC /* DEVImageStore.m in Sources */,
 				E07569011946117200FF5B45 /* DEVAppDelegate.m in Sources */,
 				E07568FD1946117200FF5B45 /* main.m in Sources */,
 				E0756924194615FE00FF5B45 /* DEVItem.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "DEVItemStore.h"
 #import "DEVItem.h"
+#import "DEVImageStore.h"
 
 @interface DEVItemStore ()
 
@@ -63,6 +64,10 @@
 
 - (void)removeItem:(DEVItem *)item
 {
+    NSString *key = item.itemKey;
+    
+    [[DEVImageStore sharedStore] deleteImageForKey:key];
+    
     [self.privateItems removeObjectIdenticalTo:item];
 }
 

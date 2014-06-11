@@ -8,12 +8,16 @@
 
 #import "DEVDetailViewController.h"
 #import "DEVItem.h"
+#import "DEVImageStore.h"
 
-@interface DEVDetailViewController ()
+@interface DEVDetailViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end
 
@@ -35,7 +39,37 @@
         dateFormatter.dateStyle = NSDateFormatterMediumStyle;
         dateFormatter.timeStyle = NSDateFormatterNoStyle;
     }
+    
+    _imageView.image = [[DEVImageStore sharedStore] imageForKey:item.itemKey];
+    
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
+}
+- (IBAction)takePicture:(id)sender
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else{
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker
+                       animated:YES
+                     completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    self.imageView.image = image;
+    
+    [[DEVImageStore sharedStore] setImage:image
+                                   forKey:self.item.itemKey];
+    [self dismissViewControllerAnimated:YES
+                             completion:NULL];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
